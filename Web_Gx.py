@@ -6,9 +6,9 @@ st.set_page_config(page_title="My Webpage", page_icon=":tada:", layout="wide")
 
 # ---- HEADER SECTION ----
 with st.container():
-    st.subheader("Hi, I am Sven :wave:")
-    st.title("A Data Analyst From Germany")
+    st.subheader("Bienvenido,  :wave:")
+    st.title("Esta es la pagina repositorio de Planificación, Operación y Performance Gas and Fuels")
     st.write(
-        "I am passionate about finding ways to use Python and VBA to be more efficient and effective in business settings."
+        "Aqui iran las aplicaciones web desarrolladas para las tareas del área, buscando optimizar las tareas diarias"
     )
-    st.write("[Learn More >](https://pythonandvba.com)")
+    st.write("cualquier problema contactar con francisco.bustamante@enel.com")
