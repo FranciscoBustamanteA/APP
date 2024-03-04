@@ -38,35 +38,35 @@ def pagina_opcion2():
             st.error(f"Ocurrió un error al leer el archivo: {str(e)}")
 
 def main():
-    # Barra lateral para la navegación
-    st.sidebar.title("Navegación")
-    st.sidebar.markdown("---")
-    st.sidebar.write("Páginas:")
-    pagina_seleccionada = st.sidebar.radio("", ["Inicio", "Opción 1", "Opción 2"])
+    # Página de inicio
+    pagina_inicio()
 
-    if pagina_seleccionada == "Inicio":
-        pagina_inicio()
-    else:
-        # Autenticación
-        username_input = st.sidebar.text_input("Usuario")
-        password_input = st.sidebar.text_input("Contraseña", type="password")
-        is_authenticated = False
+    # Autenticación
+    username_input = st.sidebar.text_input("Usuario")
+    password_input = st.sidebar.text_input("Contraseña", type="password")
+    is_authenticated = False
 
-        # Verificar credenciales
-        for username, password in credenciales.items():
-            if username_input == username and password_input == password:
-                is_authenticated = True
-                break
+    # Verificar credenciales
+    for username, password in credenciales.items():
+        if username_input == username and password_input == password:
+            is_authenticated = True
+            break
 
-        if is_authenticated:
-            st.sidebar.success("¡Autenticación exitosa!")
+    if is_authenticated:
+        st.sidebar.success("¡Autenticación exitosa!")
 
-            if pagina_seleccionada == "Opción 1":
-                pagina_opcion1()
-            elif pagina_seleccionada == "Opción 2":
-                pagina_opcion2()
-        elif username_input or password_input:  # Solo mostrar mensaje de error si se ingresó algo
-            st.sidebar.error("Nombre de usuario o contraseña incorrectos.")
+        # Barra lateral para la navegación
+        st.sidebar.title("Navegación")
+        seleccion = st.sidebar.radio("Ir a", ("Inicio", "Opción 1", "Opción 2"))
+
+        if seleccion == "Inicio":
+            pass  # Ya se mostró la página de inicio
+        elif seleccion == "Opción 1":
+            pagina_opcion1()
+        elif seleccion == "Opción 2":
+            pagina_opcion2()
+    elif username_input or password_input:  # Solo mostrar mensaje de error si se ingresó algo
+        st.sidebar.error("Nombre de usuario o contraseña incorrectos.")
 
 if __name__ == "__main__":
     main()
