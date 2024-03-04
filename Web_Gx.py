@@ -2,7 +2,7 @@ import streamlit as st
 
 # Definir credenciales
 credenciales = {
-    "fba: "fba",
+    "fba": "fba",
     "mag": "mag",
     "ads": "ads",
     "ctc":"ctc"
