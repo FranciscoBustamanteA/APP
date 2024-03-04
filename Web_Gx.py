@@ -9,7 +9,6 @@ credenciales = {
     "ctc":"ctc"
 }
 
-
 def pagina_inicio():
     st.subheader("Bienvenido,  👋")
     st.title("Esta es la página de inicio")
@@ -38,8 +37,12 @@ def pagina_opcion2():
             st.error(f"Ocurrió un error al leer el archivo: {str(e)}")
 
 def main():
+    # Variable de estado para controlar la visibilidad de la página de inicio
+    mostrar_inicio = True
+
     # Página de inicio
-    pagina_inicio()
+    if mostrar_inicio:
+        pagina_inicio()
 
     # Autenticación
     username_input = st.sidebar.text_input("Usuario")
@@ -50,6 +53,7 @@ def main():
     for username, password in credenciales.items():
         if username_input == username and password_input == password:
             is_authenticated = True
+            mostrar_inicio = False  # Ocultar la página de inicio cuando se autentifica
             break
 
     if is_authenticated:
