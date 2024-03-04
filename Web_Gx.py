@@ -9,7 +9,6 @@ credenciales = {
     "ctc":"ctc"
 }
 
-
 def pagina_inicio():
     st.subheader("Bienvenido,  👋")
     st.title("Esta es la página de inicio")
@@ -38,8 +37,8 @@ def pagina_opcion2():
             st.error(f"Ocurrió un error al leer el archivo: {str(e)}")
 
 def main():
-    # Página de inicio
-    pagina_inicio()
+    # Estado para controlar si la página de inicio ya ha sido mostrada
+    pagina_inicio_mostrada = False
 
     # Autenticación
     username_input = st.sidebar.text_input("Usuario")
@@ -60,11 +59,14 @@ def main():
         seleccion = st.sidebar.radio("Ir a", ("Inicio", "Opción 1", "Opción 2"))
 
         if seleccion == "Inicio":
-            pass  # Ya se mostró la página de inicio
+            pagina_inicio_mostrada = True
+            pagina_inicio()
         elif seleccion == "Opción 1":
             pagina_opcion1()
         elif seleccion == "Opción 2":
             pagina_opcion2()
+    elif username_input or password_input:  # Solo mostrar mensaje de error si se ingresó algo
+        st.sidebar.error("Nombre de usuario o contraseña incorrectos.")
 
 if __name__ == "__main__":
     main()
