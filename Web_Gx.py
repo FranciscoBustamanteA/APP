@@ -1,4 +1,5 @@
 import streamlit as st 
+import pandas as pd
 
 # Definir credenciales
 credenciales = {
@@ -7,6 +8,7 @@ credenciales = {
     "ads": "ads",
     "ctc":"ctc"
 }
+
 
 def pagina_inicio():
     st.subheader("Bienvenido,  👋")
@@ -25,35 +27,46 @@ def pagina_opcion1():
 
 def pagina_opcion2():
     st.title("Página de Opción 2")
-    st.write("Contenido de la opción 2")
+    st.write("Cargar archivo Excel:")
+    uploaded_file = st.file_uploader("Seleccione un archivo Excel", type=["xlsx", "xls"])
+
+    if uploaded_file is not None:
+        try:
+            df = pd.read_excel(uploaded_file)
+            st.write(df)
+        except Exception as e:
+            st.error(f"Ocurrió un error al leer el archivo: {str(e)}")
 
 def main():
-    # Autenticación
-    username_input = st.sidebar.text_input("Usuario")
-    password_input = st.sidebar.text_input("Contraseña", type="password")
-    is_authenticated = False
+    # Barra lateral para la navegación
+    st.sidebar.title("Navegación")
+    st.sidebar.markdown("---")
+    st.sidebar.write("Páginas:")
+    pagina_seleccionada = st.sidebar.radio("", ["Inicio", "Opción 1", "Opción 2"])
 
-    # Verificar credenciales
-    for username, password in credenciales.items():
-        if username_input == username and password_input == password:
-            is_authenticated = True
-            break
+    if pagina_seleccionada == "Inicio":
+        pagina_inicio()
+    else:
+        # Autenticación
+        username_input = st.sidebar.text_input("Usuario")
+        password_input = st.sidebar.text_input("Contraseña", type="password")
+        is_authenticated = False
 
-    if is_authenticated:
-        st.sidebar.success("¡Autenticación exitosa!")
+        # Verificar credenciales
+        for username, password in credenciales.items():
+            if username_input == username and password_input == password:
+                is_authenticated = True
+                break
 
-        # Barra lateral para la navegación
-        st.sidebar.title("Navegación")
-        seleccion = st.sidebar.radio("Ir a", ("Inicio", "Opción 1", "Opción 2"))
+        if is_authenticated:
+            st.sidebar.success("¡Autenticación exitosa!")
 
-        if seleccion == "Inicio":
-            pagina_inicio()
-        elif seleccion == "Opción 1":
-            pagina_opcion1()
-        elif seleccion == "Opción 2":
-            pagina_opcion2()
-    elif username_input or password_input:  # Solo mostrar mensaje de error si se ingresó algo
-        st.sidebar.error("Nombre de usuario o contraseña incorrectos.")
+            if pagina_seleccionada == "Opción 1":
+                pagina_opcion1()
+            elif pagina_seleccionada == "Opción 2":
+                pagina_opcion2()
+        elif username_input or password_input:  # Solo mostrar mensaje de error si se ingresó algo
+            st.sidebar.error("Nombre de usuario o contraseña incorrectos.")
 
 if __name__ == "__main__":
     main()
