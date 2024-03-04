@@ -37,9 +37,6 @@ def pagina_opcion2():
             st.error(f"Ocurrió un error al leer el archivo: {str(e)}")
 
 def main():
-    # Estado para controlar si la página de inicio ya ha sido mostrada
-    pagina_inicio_mostrada = True
-
     # Autenticación
     username_input = st.sidebar.text_input("Usuario")
     password_input = st.sidebar.text_input("Contraseña", type="password")
@@ -54,14 +51,15 @@ def main():
     if is_authenticated:
         st.sidebar.success("¡Autenticación exitosa!")
 
+        # Mostrar la página de inicio después de la autenticación
+        pagina_inicio()
+
         # Barra lateral para la navegación
         st.sidebar.title("Navegación")
-        seleccion = st.sidebar.radio("Ir a", ("Inicio", "Opción 1", "Opción 2"))
+        seleccion = st.sidebar.radio("Ir a", ("Opción 1", "Opción 2"))
 
-        if seleccion == "Inicio":
-            pagina_inicio_mostrada = True
-            pagina_inicio()
-        elif seleccion == "Opción 1":
+        # Mostrar la página correspondiente según la opción seleccionada
+        if seleccion == "Opción 1":
             pagina_opcion1()
         elif seleccion == "Opción 2":
             pagina_opcion2()
