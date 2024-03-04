@@ -12,9 +12,9 @@ credenciales = {
 
 def pagina_inicio():
     st.subheader("Bienvenido,  👋")
-    st.title("Esta es la página de inicio")
+    st.title("Esta es la página de Planificación, Operación y Performance Gas & Fuel")
     st.write(
-        "Aquí puedes encontrar información general sobre la aplicación."
+        "Aquí puedes encontrar información general, reportes, graficos y aplicaciones en las tareas del área"
     )
 
 def pagina_opcion1():
