@@ -38,7 +38,7 @@ def pagina_opcion2():
 
 def main():
     # Estado para controlar si la página de inicio ya ha sido mostrada
-    pagina_inicio_mostrada = False
+    pagina_inicio_mostrada = True
 
     # Autenticación
     username_input = st.sidebar.text_input("Usuario")
