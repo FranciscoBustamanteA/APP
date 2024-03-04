@@ -9,9 +9,13 @@ credenciales = {
     "ctc":"ctc"
 }
 
+
 def pagina_inicio():
-    st.title("Bienvenido a la aplicación")
-    st.write("Por favor, ingrese sus credenciales en la barra lateral para comenzar.")
+    st.subheader("Bienvenido,  👋")
+    st.title("Esta es la página de inicio")
+    st.write(
+        "Aquí puedes encontrar información general sobre la aplicación."
+    )
 
 def pagina_opcion1():
     st.title("Página de Opción 1")
@@ -34,8 +38,12 @@ def pagina_opcion2():
             st.error(f"Ocurrió un error al leer el archivo: {str(e)}")
 
 def main():
+    # Variable de estado para controlar la visibilidad de la página de inicio
+    mostrar_inicio = True
+
     # Página de inicio
-    pagina_inicio()
+    if mostrar_inicio:
+        pagina_inicio()
 
     # Autenticación
     username_input = st.sidebar.text_input("Usuario")
@@ -46,12 +54,14 @@ def main():
     for username, password in credenciales.items():
         if username_input == username and password_input == password:
             is_authenticated = True
+            mostrar_inicio = False  # Ocultar la página de inicio cuando se autentifica
             break
 
     if is_authenticated:
         st.sidebar.success("¡Autenticación exitosa!")
 
-        # Barra lateral para la navegación
+    # Barra lateral para la navegación
+    if is_authenticated:
         st.sidebar.title("Navegación")
         seleccion = st.sidebar.radio("Ir a", ("Inicio", "Opción 1", "Opción 2"))
 
