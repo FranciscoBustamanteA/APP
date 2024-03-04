@@ -9,13 +9,9 @@ credenciales = {
     "ctc":"ctc"
 }
 
-
 def pagina_inicio():
-    st.subheader("Bienvenido,  👋")
-    st.title("Esta es la página de inicio")
-    st.write(
-        "Aquí puedes encontrar información general sobre la aplicación."
-    )
+    st.title("Bienvenido a la aplicación")
+    st.write("Por favor, ingrese sus credenciales en la barra lateral para comenzar.")
 
 def pagina_opcion1():
     st.title("Página de Opción 1")
@@ -38,6 +34,9 @@ def pagina_opcion2():
             st.error(f"Ocurrió un error al leer el archivo: {str(e)}")
 
 def main():
+    # Página de inicio
+    pagina_inicio()
+
     # Autenticación
     username_input = st.sidebar.text_input("Usuario")
     password_input = st.sidebar.text_input("Contraseña", type="password")
