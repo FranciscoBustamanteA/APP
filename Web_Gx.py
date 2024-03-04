@@ -9,6 +9,7 @@ credenciales = {
     "ctc":"ctc"
 }
 
+
 def pagina_inicio():
     st.subheader("Bienvenido,  👋")
     st.title("Esta es la página de inicio")
