@@ -4,8 +4,8 @@ import streamlit as st
 st.set_page_config(page_title="Enel", page_icon=":tada:", layout="wide")
 
 # Definir credenciales
-USERNAME = "usuario"
-PASSWORD = "contraseña"
+USERNAME = "fba"
+PASSWORD = "fba"
 
 # Autenticación
 username_input = st.sidebar.text_input("Usuario")
