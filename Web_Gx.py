@@ -30,7 +30,6 @@ def main():
         is_authenticated = True
 
     if is_authenticated:
-        st.sidebar.image(":lock:", width=30)  # Utilizamos un emoji de candado como icono
         st.sidebar.success("¡Autenticación exitosa!")
 
         # Barra lateral para la navegación
