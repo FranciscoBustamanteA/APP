@@ -16,6 +16,8 @@ def pagina_inicio():
     st.write(
         "Aquí puedes encontrar información general, reportes, graficos y aplicaciones en las tareas del área"
     )
+    st.write("")
+    st.write("consultas a francisco.bustamante@enel.com")
 
 def pagina_opcion1():
     st.title("Página de Opción 1")
