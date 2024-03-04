@@ -2,7 +2,7 @@ import streamlit as st
 
 
 # Find more emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/
-st.set_page_config(page_title="My Webpage", page_icon=":tada:", layout="wide")
+st.set_page_config(page_title="Enel", page_icon=":tada:", layout="wide")
 
 # ---- HEADER SECTION ----
 with st.container():
