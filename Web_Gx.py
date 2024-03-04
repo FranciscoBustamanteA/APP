@@ -9,18 +9,17 @@ credenciales = {
     "ctc":"ctc"
 }
 
-
 def pagina_inicio():
     st.subheader("Bienvenido,  👋")
     st.title("Esta es la página de Planificación, Operación y Performance Gas & Fuel")
     st.write(
-        "Aquí puedes encontrar información general, reportes, graficos y aplicaciones en las tareas del área"
+        "Aquí puedes encontrar información general, reportes, gráficos y aplicaciones en las tareas del área."
     )
     st.write("")
     st.write("consultas a francisco.bustamante@enel.com")
 
-def pagina_opcion1():
-    st.title("Página de Opción 1")
+def Nominacion():
+    st.title("Nominación")
     st.write("Por favor, introduce dos números para sumarlos:")
     numero1 = st.number_input("Primer número", value=0)
     numero2 = st.number_input("Segundo número", value=0)
@@ -65,11 +64,14 @@ def main():
     # Barra lateral para la navegación
     if is_authenticated:
         st.sidebar.title("Navegación")
-        seleccion = st.sidebar.radio("Ir a", ("Inicio", "Opción 1", "Opción 2"))
+        seleccion = st.sidebar.radio(
+            "Ir a",
+            ("Inicio 🏠", "Nominación 📋", "Opción 2 📊")
+        )
 
-        if seleccion == "Opción 1":
-            pagina_opcion1()
-        elif seleccion == "Opción 2":
+        if seleccion == "Nominación 📋":
+            Nominacion()
+        elif seleccion == "Opción 2 📊":
             pagina_opcion2()
 
 if __name__ == "__main__":
