@@ -20,14 +20,18 @@ def pagina_opcion2():
     st.write("Contenido de la opción 2")
 
 def main():
+    # Siempre mostrar la página de inicio primero
+    pagina_inicio()
+
     # Autenticación
     username_input = st.sidebar.text_input("Usuario")
     password_input = st.sidebar.text_input("Contraseña", type="password")
     is_authenticated = False
 
-    # Verificar credenciales
-    if username_input == USERNAME and password_input == PASSWORD:
-        is_authenticated = True
+    # Verificar credenciales solo si se han ingresado valores
+    if username_input and password_input:
+        if username_input == USERNAME and password_input == PASSWORD:
+            is_authenticated = True
 
     if is_authenticated:
         st.sidebar.success("¡Autenticación exitosa!")
@@ -37,12 +41,12 @@ def main():
         seleccion = st.sidebar.radio("Ir a", ("Inicio", "Opción 1", "Opción 2"))
 
         if seleccion == "Inicio":
-            pagina_inicio()
+            pass  # Ya se mostró la página de inicio
         elif seleccion == "Opción 1":
             pagina_opcion1()
         elif seleccion == "Opción 2":
             pagina_opcion2()
-    else:
+    elif username_input or password_input:  # Solo mostrar mensaje de error si se ingresó algo
         st.sidebar.error("Nombre de usuario o contraseña incorrectos.")
 
 if __name__ == "__main__":
