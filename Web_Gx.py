@@ -12,9 +12,9 @@ credenciales = {
 
 def pagina_inicio():
     st.subheader("Bienvenido,  👋")
-    st.title("Esta es la página de Planificación, Operación y Performance Gas and Fuels")
+    st.title("Esta es la página de inicio")
     st.write(
-        "Aquí puedes encontrar información del área y las aplicaciones que se iran desarrollando para las tareas del área."
+        "Aquí puedes encontrar información general sobre la aplicación."
     )
 
 def pagina_opcion1():
@@ -65,8 +65,6 @@ def main():
             pagina_opcion1()
         elif seleccion == "Opción 2":
             pagina_opcion2()
-    elif username_input or password_input:  # Solo mostrar mensaje de error si se ingresó algo
-        st.sidebar.error("Nombre de usuario o contraseña incorrectos.")
 
 if __name__ == "__main__":
     main()
