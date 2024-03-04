@@ -1,8 +1,12 @@
 import streamlit as st 
 
 # Definir credenciales
-USERNAME = "fba"
-PASSWORD = "fba"
+credenciales = {
+    "fba: "fba",
+    "mag": "mag",
+    "ads": "ads"
+    "ctc":"ctc"
+}
 
 def pagina_inicio():
     st.subheader("Bienvenido,  👋")
@@ -13,7 +17,11 @@ def pagina_inicio():
 
 def pagina_opcion1():
     st.title("Página de Opción 1")
-    st.write("Contenido de la opción 1")
+    st.write("Por favor, introduce dos números para sumarlos:")
+    numero1 = st.number_input("Primer número", value=0)
+    numero2 = st.number_input("Segundo número", value=0)
+    resultado = numero1 + numero2
+    st.write(f"La suma de {numero1} y {numero2} es: {resultado}")
 
 def pagina_opcion2():
     st.title("Página de Opción 2")
@@ -26,8 +34,10 @@ def main():
     is_authenticated = False
 
     # Verificar credenciales
-    if username_input == USERNAME and password_input == PASSWORD:
-        is_authenticated = True
+    for username, password in credenciales.items():
+        if username_input == username and password_input == password:
+            is_authenticated = True
+            break
 
     if is_authenticated:
         st.sidebar.success("¡Autenticación exitosa!")
