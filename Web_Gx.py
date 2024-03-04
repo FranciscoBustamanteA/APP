@@ -9,7 +9,6 @@ credenciales = {
     "ctc":"ctc"
 }
 
-
 def pagina_inicio():
     st.subheader("Bienvenido,  👋")
     st.title("Esta es la página de inicio")
@@ -55,7 +54,8 @@ def main():
     if is_authenticated:
         st.sidebar.success("¡Autenticación exitosa!")
 
-        # Barra lateral para la navegación
+    # Barra lateral para la navegación
+    if is_authenticated:
         st.sidebar.title("Navegación")
         seleccion = st.sidebar.radio("Ir a", ("Inicio", "Opción 1", "Opción 2"))
 
