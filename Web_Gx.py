@@ -52,9 +52,7 @@ def main():
             recurso_primario()
         elif seleccion == "Logout":
             is_authenticated = False
-            pagina_inicio()  # Redireccionar a la página de inicio
             st.experimental_rerun()  # Reiniciar la aplicación
 
 if __name__ == "__main__":
     main()
-
