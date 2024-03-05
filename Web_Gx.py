@@ -8,7 +8,7 @@ credenciales = {
     "fba": "fba",
     "mag": "mag",
     "ads": "ads",
-    "ctc":"ctc"
+    "ctc": "ctc"
 }
 
 def pagina_inicio():
@@ -19,31 +19,25 @@ def pagina_inicio():
     )
     st.write("")
     st.write("consultas a francisco.bustamante@enel.com")
-  
 
 def main():
-    # Variable de estado para controlar la visibilidad de la página de inicio
-    mostrar_inicio = True
-
-    # Página de inicio
-    if mostrar_inicio:
-        pagina_inicio()
-
-    # Autenticación
-    username_input = st.sidebar.text_input("Usuario")
-    password_input = st.sidebar.text_input("Contraseña", type="password")
+    # Variable de estado para controlar la autenticación
     is_authenticated = False
 
-    # Verificar credenciales
-    for username, password in credenciales.items():
-        if username_input == username and password_input == password:
-            is_authenticated = True
-            mostrar_inicio = False  # Ocultar la página de inicio cuando se autentifica
-            break
+    # Página de inicio
+    pagina_inicio()
 
-    if is_authenticated:
-        st.sidebar.success("¡Autenticación exitosa!")
-    
+    # Autenticación
+    if not is_authenticated:
+        username_input = st.sidebar.text_input("Usuario")
+        password_input = st.sidebar.text_input("Contraseña", type="password")
+        if st.sidebar.button("Iniciar sesión"):
+            for username, password in credenciales.items():
+                if username_input == username and password_input == password:
+                    is_authenticated = True
+                    st.sidebar.success("¡Autenticación exitosa!")
+                    break
+
     # Barra lateral para la navegación
     if is_authenticated:
         st.sidebar.title("Navegación")
@@ -57,11 +51,10 @@ def main():
         elif seleccion == "Declaración Recurso Primario 📊":
             recurso_primario()
         elif seleccion == "Logout":
-            # Reiniciar la autenticación y mostrar la página de inicio nuevamente
             is_authenticated = False
-            username_input = ""
-            password_input = ""
-            mostrar_inicio = True
+            pagina_inicio()  # Redireccionar a la página de inicio
+            st.experimental_rerun()  # Reiniciar la aplicación
 
 if __name__ == "__main__":
     main()
+
