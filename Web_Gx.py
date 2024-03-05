@@ -31,10 +31,8 @@ def main():
     for username, password in credenciales.items():
         if username_input == username and password_input == password:
             is_authenticated = True
+            st.sidebar.success("¡Autenticación exitosa!")
             break
-
-    if is_authenticated:
-        st.sidebar.success("¡Autenticación exitosa!")
 
     # Barra lateral para la navegación
     st.sidebar.title("Navegación")
@@ -55,7 +53,6 @@ def main():
         nominacion()
     elif seleccion == "Declaración Recurso Primario 📊":
         recurso_primario()
-   
 
 if __name__ == "__main__":
     main()
