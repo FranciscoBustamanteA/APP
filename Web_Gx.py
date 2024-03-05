@@ -35,15 +35,19 @@ def main():
 
     if is_authenticated:
         st.sidebar.success("¡Autenticación exitosa!")
-        username_input = ""  # Borrar el usuario
-        password_input = ""  # Borrar la contraseña
 
     # Barra lateral para la navegación
     st.sidebar.title("Navegación")
-    seleccion = st.sidebar.radio(
-        "Ir a",
-        ("Inicio 🏠", "Nominación 📋", "Declaración Recurso Primario 📊", "Logout")
-    )
+    if is_authenticated:
+        seleccion = st.sidebar.radio(
+            "Ir a",
+            ("Inicio 🏠", "Nominación 📋", "Declaración Recurso Primario 📊", "Logout")
+        )
+    else:
+        seleccion = st.sidebar.radio(
+            "Ir a",
+            ("Inicio 🏠",)
+        )
 
     if seleccion == "Inicio 🏠":
         pagina_inicio()
@@ -52,8 +56,7 @@ def main():
     elif seleccion == "Declaración Recurso Primario 📊":
         recurso_primario()
     elif seleccion == "Logout":
-        st.experimental_rerun()  # Reiniciar la aplicación para volver a la página de inicio
+        st.experimental_rerun()  # Reiniciar la aplicación para actualizar el estado de autenticación
 
 if __name__ == "__main__":
     main()
-
