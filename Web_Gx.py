@@ -51,9 +51,8 @@ def main():
         elif seleccion == "Declaración Recurso Primario 📊":
             recurso_primario()
         elif seleccion == "Logout":
-            if st.sidebar.button("Logout"):  # Solo redirigir cuando se hace clic en el botón "Logout"
-                is_authenticated = False
-                st.experimental_rerun()  # Reiniciar la aplicación
+            is_authenticated = False
+            pagina_inicio()  # Redirigir a la página de inicio
 
 if __name__ == "__main__":
     main()
