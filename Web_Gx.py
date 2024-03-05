@@ -57,7 +57,6 @@ def main():
         recurso_primario()
     elif seleccion == "Logout":
         is_authenticated = False
-        pagina_inicio()
 
 if __name__ == "__main__":
     main()
