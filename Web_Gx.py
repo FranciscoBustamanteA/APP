@@ -29,18 +29,19 @@ def main():
 
     # Autenticación
     if not is_authenticated:
-        username_input = st.sidebar.text_input("Usuario")
-        password_input = st.sidebar.text_input("Contraseña", type="password")
+        username_input_placeholder = st.sidebar.empty()
+        password_input_placeholder = st.sidebar.empty()
+        username_input = username_input_placeholder.text_input("Usuario")
+        password_input = password_input_placeholder.text_input("Contraseña", type="password")
         if st.sidebar.button("Iniciar sesión"):
             for username, password in credenciales.items():
                 if username_input == username and password_input == password:
                     is_authenticated = True
                     st.sidebar.success("¡Autenticación exitosa!")
+                    # Limpiar campos de entrada
+                    username_input_placeholder.empty()
+                    password_input_placeholder.empty()
                     break
-            if is_authenticated:
-                # Limpiar campos de entrada
-                username_input = ""
-                password_input = ""
 
     # Barra lateral para la navegación
     if is_authenticated:
