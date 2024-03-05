@@ -8,7 +8,7 @@ credenciales = {
     "fba": "fba",
     "mag": "mag",
     "ads": "ads",
-    "ctc":"ctc"
+    "ctc": "ctc"
 }
 
 def pagina_inicio():
@@ -52,7 +52,7 @@ def main():
         st.sidebar.title("Navegación")
         seleccion = st.sidebar.radio(
             "Ir a",
-            ("Inicio 🏠", "Nominación 📋", "Declaración Recurso Primario 📊", "Logout 🏃‍♂️")
+            ("Inicio 🏠", "Nominación 📋", "Declaración Recurso Primario 📊", "Logout🏃‍♂️")
         )
 
         if seleccion == "Nominación 📋":
@@ -65,5 +65,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-        
