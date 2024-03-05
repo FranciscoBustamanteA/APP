@@ -35,6 +35,8 @@ def main():
 
     if is_authenticated:
         st.sidebar.success("¡Autenticación exitosa!")
+        st.experimental_rerun()  # Reiniciar la aplicación para actualizar el estado de autenticación
+        return  # Salir de la función principal después de reiniciar la aplicación
 
     # Barra lateral para la navegación
     st.sidebar.title("Navegación")
@@ -56,7 +58,7 @@ def main():
     elif seleccion == "Declaración Recurso Primario 📊":
         recurso_primario()
     elif seleccion == "Logout":
-        is_authenticated = False
+        pass  # No hacer nada, ya que la aplicación se reiniciará automáticamente después de autenticarse
 
 if __name__ == "__main__":
     main()
