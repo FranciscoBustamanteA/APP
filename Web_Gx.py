@@ -8,7 +8,7 @@ credenciales = {
     "fba": "fba",
     "mag": "mag",
     "ads": "ads",
-    "ctc": "ctc"
+    "ctc":"ctc"
 }
 
 def pagina_inicio():
@@ -30,8 +30,10 @@ def main():
         pagina_inicio()
 
     # Autenticación
-    username_input = st.sidebar.text_input("Usuario")
-    password_input = st.sidebar.text_input("Contraseña", type="password")
+    username_input_placeholder = st.sidebar.empty()
+    password_input_placeholder = st.sidebar.empty()
+    username_input = username_input_placeholder.text_input("Usuario")
+    password_input = password_input_placeholder.text_input("Contraseña", type="password")
     is_authenticated = False
 
     # Verificar credenciales
@@ -44,15 +46,15 @@ def main():
     if is_authenticated:
         st.sidebar.success("¡Autenticación exitosa!")
         # Restablecer usuario y contraseña después de la autenticación
-        username_input = ""
-        password_input = ""
+        username_input_placeholder.empty()
+        password_input_placeholder.empty()
 
     # Barra lateral para la navegación
     if is_authenticated:
         st.sidebar.title("Navegación")
         seleccion = st.sidebar.radio(
             "Ir a",
-            ("Inicio 🏠", "Nominación 📋", "Declaración Recurso Primario 📊", "Logout🏃‍♂️")
+            ("Inicio 🏠", "Nominación 📋", "Declaración Recurso Primario 📊", "Logout 🏃‍♂️")
         )
 
         if seleccion == "Nominación 📋":
