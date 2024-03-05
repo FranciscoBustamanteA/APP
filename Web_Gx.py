@@ -1,6 +1,7 @@
 import streamlit as st 
 import pandas as pd
 from home import nominacion
+from Recurso_primario import recurso_primario
 
 # Definir credenciales
 credenciales = {
@@ -19,18 +20,6 @@ def pagina_inicio():
     st.write("")
     st.write("consultas a francisco.bustamante@enel.com")
   
-
-def pagina_opcion2():
-    st.title("Página de Opción 2")
-    st.write("Cargar archivo Excel:")
-    uploaded_file = st.file_uploader("Seleccione un archivo Excel", type=["xlsx", "xls"])
-
-    if uploaded_file is not None:
-        try:
-            df = pd.read_excel(uploaded_file)
-            st.write(df)
-        except Exception as e:
-            st.error(f"Ocurrió un error al leer el archivo: {str(e)}")
 
 def main():
     # Variable de estado para controlar la visibilidad de la página de inicio
@@ -65,8 +54,8 @@ def main():
 
         if seleccion == "Nominación 📋":
             nominacion()
-        elif seleccion == "Opción 2 📊":
-            pagina_opcion2()
+        elif seleccion == "Declaración Recurso Primario 📊":
+            recurso_primario()
 
 if __name__ == "__main__":
     main()
