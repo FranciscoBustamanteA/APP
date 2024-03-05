@@ -43,6 +43,9 @@ def main():
 
     if is_authenticated:
         st.sidebar.success("¡Autenticación exitosa!")
+        # Restablecer usuario y contraseña después de la autenticación
+        username_input = ""
+        password_input = ""
 
     # Barra lateral para la navegación
     if is_authenticated:
@@ -62,3 +65,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+        
