@@ -56,7 +56,7 @@ def main():
     elif seleccion == "Declaración Recurso Primario 📊":
         recurso_primario()
     elif seleccion == "Logout":
-        st.experimental_rerun()
+        is_authenticated = False
 
 if __name__ == "__main__":
     main()
