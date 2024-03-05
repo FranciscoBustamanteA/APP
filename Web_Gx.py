@@ -23,38 +23,41 @@ def main():
     # Variable de estado para controlar si se ha autenticado
     is_authenticated = False
 
-    if not is_authenticated:
-        pagina_inicio()
+    # Autenticación
+    username_input = st.sidebar.text_input("Usuario")
+    password_input = st.sidebar.text_input("Contraseña", type="password")
 
-        # Autenticación
-        username_input = st.sidebar.text_input("Usuario")
-        password_input = st.sidebar.text_input("Contraseña", type="password")
+    # Verificar credenciales
+    for username, password in credenciales.items():
+        if username_input == username and password_input == password:
+            is_authenticated = True
+            break
 
-        # Verificar credenciales
-        for username, password in credenciales.items():
-            if username_input == username and password_input == password:
-                is_authenticated = True
-                break
+    if is_authenticated:
+        st.sidebar.success("¡Autenticación exitosa!")
 
-        if is_authenticated:
-            st.sidebar.success("¡Autenticación exitosa!")
-
-    else:
-        st.sidebar.title("Navegación")
+    # Barra lateral para la navegación
+    st.sidebar.title("Navegación")
+    if is_authenticated:
         seleccion = st.sidebar.radio(
             "Ir a",
             ("Inicio 🏠", "Nominación 📋", "Declaración Recurso Primario 📊", "Logout")
         )
+    else:
+        seleccion = st.sidebar.radio(
+            "Ir a",
+            ("Inicio 🏠",)
+        )
 
-        if seleccion == "Inicio 🏠":
-            pagina_inicio()
-        elif seleccion == "Nominación 📋":
-            nominacion()
-        elif seleccion == "Declaración Recurso Primario 📊":
-            recurso_primario()
-        elif seleccion == "Logout":
-            is_authenticated = False
+    if seleccion == "Inicio 🏠":
+        pagina_inicio()
+    elif seleccion == "Nominación 📋":
+        nominacion()
+    elif seleccion == "Declaración Recurso Primario 📊":
+        recurso_primario()
+    elif seleccion == "Logout":
+        is_authenticated = False
+        pagina_inicio()
 
 if __name__ == "__main__":
     main()
-
