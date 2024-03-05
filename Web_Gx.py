@@ -56,9 +56,7 @@ def main():
         elif seleccion == "Declaración Recurso Primario 📊":
             recurso_primario()
         elif seleccion == "Logout":
-            mostrar_inicio = True  # Volver a mostrar la página de inicio para pedir la autenticación
+            st.markdown("<script type='text/javascript'>window.location.href=window.location.href</script>", unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
-
-
