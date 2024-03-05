@@ -68,7 +68,7 @@ def main():
         )
 
         if seleccion == "Nominación 📋":
-            Nominacion()
+            nominacion()
         elif seleccion == "Opción 2 📊":
             pagina_opcion2()
 
