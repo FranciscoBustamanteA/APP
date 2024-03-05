@@ -29,8 +29,11 @@ def main():
         pagina_inicio()
 
     # Autenticación
-    username_input = st.sidebar.text_input("Usuario")
-    password_input = st.sidebar.text_input("Contraseña", type="password")
+    username_input_key = "usuario"
+    password_input_key = "contraseña"
+
+    username_input = st.sidebar.text_input("Usuario", key=username_input_key)
+    password_input = st.sidebar.text_input("Contraseña", type="password", key=password_input_key)
     is_authenticated = False
 
     # Verificar credenciales
@@ -42,8 +45,6 @@ def main():
 
     if is_authenticated:
         st.sidebar.success("¡Autenticación exitosa!")
-        username_input = ""  # Borrar el texto de usuario
-        password_input = ""  # Borrar el texto de contraseña
 
     # Barra lateral para la navegación
     if is_authenticated:
@@ -58,7 +59,8 @@ def main():
         elif seleccion == "Declaración Recurso Primario 📊":
             recurso_primario()
         elif seleccion == "Logout":
-            st.markdown("<script type='text/javascript'>window.location.href=window.location.href</script>", unsafe_allow_html=True)
+            is_authenticated = False  # Borrar la autenticación existente
+            st.experimental_rerun()  # Reiniciar la aplicación para borrar los valores de los campos de entrada
 
 if __name__ == "__main__":
     main()
