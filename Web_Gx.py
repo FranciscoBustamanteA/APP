@@ -62,11 +62,10 @@ def main():
         elif seleccion == "Logout":
             # Restablecer la autenticación y mostrar la página de inicio nuevamente
             mostrar_inicio = True
-            # Si mostrar_inicio es True, mostrar la página de inicio
+            st.experimental_rerun()
+            
     
-    if mostrar_inicio:
-        username_input = ""  # Limpiar usuario al mostrar la página de inicio
-        password_input = ""  # Limpiar contraseña al mostrar la página de inicio
+    
 
 if __name__ == "__main__":
     main()
