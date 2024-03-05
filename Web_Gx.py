@@ -42,6 +42,8 @@ def main():
 
     if is_authenticated:
         st.sidebar.success("¡Autenticación exitosa!")
+        username_input = ""  # Borrar el texto de usuario
+        password_input = ""  # Borrar el texto de contraseña
 
     # Barra lateral para la navegación
     if is_authenticated:
