@@ -49,7 +49,7 @@ def main():
         st.sidebar.title("Navegación")
         seleccion = st.sidebar.radio(
             "Ir a",
-            ("Inicio 🏠", "Nominación 📋", "Opción 2 📊")
+            ("Inicio 🏠", "Nominación 📋", "Declaración Recurso Primario 📊")
         )
 
         if seleccion == "Nominación 📋":
