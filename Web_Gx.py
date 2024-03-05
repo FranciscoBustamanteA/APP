@@ -49,13 +49,16 @@ def main():
         st.sidebar.title("Navegación")
         seleccion = st.sidebar.radio(
             "Ir a",
-            ("Inicio 🏠", "Nominación 📋", "Declaración Recurso Primario 📊")
+            ("Inicio 🏠", "Nominación 📋", "Declaración Recurso Primario 📊", "Logout 🏃‍♂️")
         )
 
         if seleccion == "Nominación 📋":
             nominacion()
         elif seleccion == "Declaración Recurso Primario 📊":
             recurso_primario()
+        elif seleccion == "Logout":
+            # Restablecer la autenticación y mostrar la página de inicio nuevamente
+            mostrar_inicio = True
 
 if __name__ == "__main__":
     main()
