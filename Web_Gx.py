@@ -56,7 +56,7 @@ def main():
     elif seleccion == "Declaración Recurso Primario 📊":
         recurso_primario()
     elif seleccion == "Logout":
-        is_authenticated = False
+        st.markdown("<script>window.close()</script>", unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
