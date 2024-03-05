@@ -8,7 +8,7 @@ credenciales = {
     "fba": "fba",
     "mag": "mag",
     "ads": "ads",
-    "ctc":"ctc"
+    "ctc": "ctc"
 }
 
 def pagina_inicio():
@@ -19,7 +19,6 @@ def pagina_inicio():
     )
     st.write("")
     st.write("consultas a francisco.bustamante@enel.com")
-  
 
 def main():
     # Variable de estado para controlar la visibilidad de la página de inicio
@@ -60,12 +59,8 @@ def main():
         elif seleccion == "Declaración Recurso Primario 📊":
             recurso_primario()
         elif seleccion == "Logout":
-            # Restablecer la autenticación y mostrar la página de inicio nuevamente
-            mostrar_inicio = True
+            # Reiniciar la aplicación para volver a pedir la autenticación
             st.experimental_rerun()
-            
-    
-    
 
 if __name__ == "__main__":
     main()
