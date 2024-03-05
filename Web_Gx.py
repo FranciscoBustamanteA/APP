@@ -42,9 +42,6 @@ def main():
 
     if is_authenticated:
         st.sidebar.success("¡Autenticación exitosa!")
-        # Restablecer usuario y contraseña después de la autenticación
-        username_input = ""
-        password_input = ""
 
     # Barra lateral para la navegación
     if is_authenticated:
@@ -59,8 +56,7 @@ def main():
         elif seleccion == "Declaración Recurso Primario 📊":
             recurso_primario()
         elif seleccion == "Logout":
-            # Reiniciar la aplicación para volver a pedir la autenticación
-            st.experimental_rerun()
+            st.experimental_rerun()  # Reiniciar la aplicación para volver a pedir la autenticación
 
 if __name__ == "__main__":
     main()
