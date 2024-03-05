@@ -37,10 +37,10 @@ def main():
                     is_authenticated = True
                     break
             if is_authenticated:
-                st.sidebar.success("¡Autenticación exitosa!")
-                # Limpiar campos de entrada
-                username_input = ""
-                password_input = ""
+               st.sidebar.success("¡Autenticación exitosa!")
+        # Restablecer usuario y contraseña después de la autenticación
+                username_input_placeholder.empty()
+                password_input_placeholder.empty()
         else:
             st.sidebar.warning("Por favor ingresa tus credenciales")
 
