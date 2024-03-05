@@ -41,7 +41,7 @@ def main():
     if is_authenticated:
         seleccion = st.sidebar.radio(
             "Ir a",
-            ("Inicio 🏠", "Nominación 📋", "Declaración Recurso Primario 📊", "Logout")
+            ("Inicio 🏠", "Nominación 📋", "Declaración Recurso Primario 📊")
         )
     else:
         seleccion = st.sidebar.radio(
@@ -55,8 +55,7 @@ def main():
         nominacion()
     elif seleccion == "Declaración Recurso Primario 📊":
         recurso_primario()
-    elif seleccion == "Logout":
-        st.experimental_rerun()  # Reiniciar la aplicación para actualizar el estado de autenticación
+   
 
 if __name__ == "__main__":
     main()
