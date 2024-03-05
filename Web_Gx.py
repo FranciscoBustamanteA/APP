@@ -35,14 +35,12 @@ def main():
             for username, password in credenciales.items():
                 if username_input == username and password_input == password:
                     is_authenticated = True
+                    st.sidebar.success("¡Autenticación exitosa!")
                     break
             if is_authenticated:
-               st.sidebar.success("¡Autenticación exitosa!")
-        # Restablecer usuario y contraseña después de la autenticación
-                username_input_placeholder.empty()
-                password_input_placeholder.empty()
-        else:
-            st.sidebar.warning("Por favor ingresa tus credenciales")
+                # Limpiar campos de entrada
+                username_input = ""
+                password_input = ""
 
     # Barra lateral para la navegación
     if is_authenticated:
@@ -62,3 +60,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
