@@ -35,8 +35,6 @@ def main():
             if username_input == username and password_input == password:
                 is_authenticated = True
                 st.sidebar.success("¡Autenticación exitosa!")
-                username_input = ""  # Limpiar el texto del campo de entrada del usuario
-                password_input = ""  # Limpiar el texto del campo de entrada de la contraseña
                 break
 
     # Barra lateral para la navegación
@@ -57,3 +55,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
