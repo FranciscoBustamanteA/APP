@@ -8,7 +8,7 @@ credenciales = {
     "fba": "fba",
     "mag": "mag",
     "ads": "ads",
-    "ctc": "ctc"
+    "ctc":"ctc"
 }
 
 def pagina_inicio():
@@ -19,6 +19,7 @@ def pagina_inicio():
     )
     st.write("")
     st.write("consultas a francisco.bustamante@enel.com")
+  
 
 def main():
     # Variable de estado para controlar la visibilidad de la página de inicio
@@ -42,13 +43,13 @@ def main():
 
     if is_authenticated:
         st.sidebar.success("¡Autenticación exitosa!")
-
+    
     # Barra lateral para la navegación
     if is_authenticated:
         st.sidebar.title("Navegación")
         seleccion = st.sidebar.radio(
             "Ir a",
-            ("Inicio 🏠", "Nominación 📋", "Declaración Recurso Primario 📊", "Logout 🏃‍♂️")
+            ("Inicio 🏠", "Nominación 📋", "Declaración Recurso Primario 📊", "Logout")
         )
 
         if seleccion == "Nominación 📋":
@@ -56,12 +57,11 @@ def main():
         elif seleccion == "Declaración Recurso Primario 📊":
             recurso_primario()
         elif seleccion == "Logout":
-            mostrar_inicio = True  # Redirige a la página de inicio al hacer clic en Logout
-
-    # Si mostrar_inicio es True, mostrar la página de inicio
-    if mostrar_inicio:
-        username_input = ""  # Limpiar usuario al mostrar la página de inicio
-        password_input = ""  # Limpiar contraseña al mostrar la página de inicio
+            # Reiniciar la autenticación y mostrar la página de inicio nuevamente
+            is_authenticated = False
+            username_input = ""
+            password_input = ""
+            mostrar_inicio = True
 
 if __name__ == "__main__":
     main()
