@@ -28,14 +28,21 @@ def main():
     pagina_inicio()
 
     # Autenticación
-    username_input = st.sidebar.text_input("Usuario")
-    password_input = st.sidebar.text_input("Contraseña", type="password")
-    if st.sidebar.button("Iniciar sesión"):
-        for username, password in credenciales.items():
-            if username_input == username and password_input == password:
-                is_authenticated = True
+    if not is_authenticated:
+        username_input = st.sidebar.text_input("Usuario")
+        password_input = st.sidebar.text_input("Contraseña", type="password")
+        if st.sidebar.button("Iniciar sesión"):
+            for username, password in credenciales.items():
+                if username_input == username and password_input == password:
+                    is_authenticated = True
+                    break
+            if is_authenticated:
                 st.sidebar.success("¡Autenticación exitosa!")
-                break
+                # Limpiar campos de entrada
+                username_input = ""
+                password_input = ""
+        else:
+            st.sidebar.warning("Por favor ingresa tus credenciales")
 
     # Barra lateral para la navegación
     if is_authenticated:
@@ -55,4 +62,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
