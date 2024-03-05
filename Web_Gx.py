@@ -1,5 +1,6 @@
 import streamlit as st 
 import pandas as pd
+from home import nominacion
 
 # Definir credenciales
 credenciales = {
@@ -18,13 +19,10 @@ def pagina_inicio():
     st.write("")
     st.write("consultas a francisco.bustamante@enel.com")
 
-def Nominacion():
+def nominacion():
     st.title("Nominación")
     st.write("Por favor, introduce dos números para sumarlos:")
-    numero1 = st.number_input("Primer número", value=0)
-    numero2 = st.number_input("Segundo número", value=0)
-    resultado = numero1 + numero2
-    st.write(f"La suma de {numero1} y {numero2} es: {resultado}")
+    
 
 def pagina_opcion2():
     st.title("Página de Opción 2")
