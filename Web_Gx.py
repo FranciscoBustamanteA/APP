@@ -18,11 +18,7 @@ def pagina_inicio():
     )
     st.write("")
     st.write("consultas a francisco.bustamante@enel.com")
-
-def nominacion():
-    st.title("Nominación")
-    st.write("Por favor, introduce dos números para sumarlos:")
-    
+  
 
 def pagina_opcion2():
     st.title("Página de Opción 2")
