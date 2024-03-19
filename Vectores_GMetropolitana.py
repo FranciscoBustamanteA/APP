@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-
+!install openpyxl
 
 def Calculo_Vectores_GMetropolitana():
     st.title("Calculo Vectores Generadora Metropolitana")
