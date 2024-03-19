@@ -11,7 +11,7 @@ def Calculo_Vectores_GMetropolitana():
 
 # Verificar si se ha cargado un archivo
     if archivo:
-        st.markdown('---'
+        st.markdown('---')
         # Leer el archivo Excel
             df = pd.read_excel(archivo,engine='openpyxl')
             st.dataframe(df)
