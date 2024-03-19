@@ -17,7 +17,7 @@ def stock():
             st.error(f"Error al leer el archivo de Excel: {e}")
 
 # URL del archivo Excel en OneDrive
-    url_excel = https://enelcom.sharepoint.com/:x:/r/sites/01_Planificacion_Operacion_Performance/_layouts/15/Doc.aspx?sourcedoc=%7BA25C920A-C8EF-4852-92E3-6A309232EE6A%7D&file=Stock%20GNL%202022%20F%20V2.xlsx&action=default&mobileredirect=true
+    url_excel = 'https://enelcom.sharepoint.com/:x:/r/sites/01_Planificacion_Operacion_Performance/_layouts/15/Doc.aspx?sourcedoc=%7BA25C920A-C8EF-4852-92E3-6A309232EE6A%7D&file=Stock%20GNL%202022%20F%20V2.xlsx&action=default&mobileredirect=true'
 
 # Nombre de la hoja que deseas leer
     nombre_hoja = "Stock Norte 24 Hrs"
