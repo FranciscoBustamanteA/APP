@@ -41,7 +41,7 @@ def main():
     if is_authenticated:
         seleccion = st.sidebar.radio(
             "Ir a",
-            ("Inicio 🏠","Vectores GMetropolitana 📖"  "nominacion 📋", "Declaración Recurso Primario 📊","STOCK 💾")
+            ("Inicio 🏠","Vectores GMetropolitana 📖","Info Tecnica 💾")
         )
     else:
         seleccion = st.sidebar.radio(
@@ -51,14 +51,11 @@ def main():
 
     if seleccion == "Inicio 🏠":
         pagina_inicio()
-    elif seleccion == "nominacion 📋":
-        nominacion()
-    elif seleccion == "Declaración Recurso Primario 📊":
-        recurso_primario()
-    elif seleccion=="STOCK 💾":
+    
+    elif seleccion=="Info Tecnica 💾":
         stock()
     elif seleccion=="Vectores GMetropolitana 📖":
-        Vectores_GMetropolitana()
+        Calculo_Vectores_GMetropolitana()
 
 if __name__ == "__main__":
     main()
