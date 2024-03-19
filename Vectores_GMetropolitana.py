@@ -1,4 +1,4 @@
 import streamlit as st
 def Calculo_Vectores_GMetropolitana():
-    st.write(
+    st.title(
         "Calculo Vectores Generadora Metropolitana")
