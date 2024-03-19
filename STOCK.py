@@ -1,3 +1,5 @@
 import streamlit as st
 def STOCK():
-    st.write("escribir codigo para la STOCK")
+    st.title("Calculo del STOCK disponible de Gas")
+    
+    
