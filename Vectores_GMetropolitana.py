@@ -12,7 +12,7 @@ def Calculo_Vectores_GMetropolitana():
         st.markdown('---')
         try:
             # Leer el archivo Excel
-            df = pd.read_excel(archivo, engine='openpyxl')
+            df = pd.read_excel(archivo, engine='openpyxl',sheet_name='Demanda')
             
             # Mostrar los datos del archivo Excel
             st.write('**Datos del archivo Excel:**')
