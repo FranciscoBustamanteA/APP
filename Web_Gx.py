@@ -49,8 +49,8 @@ def main():
 
     if seleccion == "Inicio 🏠":
         pagina_inicio()
-    elif seleccion == "Nominación 📋":
-        nominacion()
+    elif seleccion == "Stock 📋":
+        Stock()
     elif seleccion == "Declaración Recurso Primario 📊":
         recurso_primario()
 
