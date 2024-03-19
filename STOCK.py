@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
 import numpy as np
 
-def STOCK():
+def stock():
     st.title("Calculo del STOCK disponible de Gas")
     #lectura archivo stock onedrive
     def leer_excel(url, nombre_hoja, columnas):
