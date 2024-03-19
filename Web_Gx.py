@@ -2,6 +2,7 @@ import streamlit as st
 from home import nominacion
 from Recurso_primario import recurso_primario
 from STOCK import stock
+from Vectores_GMetropolitana import Vectores_GMetropolitana
 
 # Definir credenciales
 credenciales = {
