@@ -1,7 +1,7 @@
 import streamlit as st 
 from home import nominacion
 from Recurso_primario import recurso_primario
-from STOCK import STOCK
+from STOCK import stock
 
 # Definir credenciales
 credenciales = {
@@ -55,7 +55,7 @@ def main():
     elif seleccion == "Declaración Recurso Primario 📊":
         recurso_primario()
     elif seleccion=="STOCK 💾":
-        STOCK()
+        stock()
 
 if __name__ == "__main__":
     main()
