@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
-
+# Installing Selenium with this shortcut
+!pip install kora
+!pip install selenium
 
 def stock():
     st.title("Calculo del STOCK disponible de Gas")
