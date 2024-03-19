@@ -40,7 +40,7 @@ def main():
     if is_authenticated:
         seleccion = st.sidebar.radio(
             "Ir a",
-            ("Inicio 🏠", "nominacion 📋", "Declaración Recurso Primario 📊","STOCK 💾")
+            ("Inicio 🏠","Vectores GMetropolitana 📖"  "nominacion 📋", "Declaración Recurso Primario 📊","STOCK 💾")
         )
     else:
         seleccion = st.sidebar.radio(
@@ -56,6 +56,8 @@ def main():
         recurso_primario()
     elif seleccion=="STOCK 💾":
         stock()
+    elif seleccion=="Vectores GMetropolitana 📖":
+        Vectores_GMetropolitana()
 
 if __name__ == "__main__":
     main()
