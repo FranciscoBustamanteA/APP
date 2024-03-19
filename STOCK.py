@@ -23,7 +23,7 @@ def stock():
     st.title("Visualizador de Datos desde OneDrive")
 
 # Leer el archivo de Excel desde OneDrive
-    df = leer_excel(url_excel, nombre_hoja, columnas_especificas)
+    df = leer_excel(url_excel, nombre_hoja)
 
 # Mostrar los datos en Streamlit
     if df is not None:
