@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
+
 
 def stock():
     st.title("Calculo del STOCK disponible de Gas")
