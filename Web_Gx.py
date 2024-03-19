@@ -1,6 +1,7 @@
 import streamlit as st 
 from home import nominacion
 from Recurso_primario import recurso_primario
+from STOCK import STOCK
 
 # Definir credenciales
 credenciales = {
@@ -39,7 +40,7 @@ def main():
     if is_authenticated:
         seleccion = st.sidebar.radio(
             "Ir a",
-            ("Inicio 🏠", "STOCK 📋", "Declaración Recurso Primario 📊")
+            ("Inicio 🏠", "nominacion 📋", "Declaración Recurso Primario 📊","STOCK 💾")
         )
     else:
         seleccion = st.sidebar.radio(
@@ -49,10 +50,12 @@ def main():
 
     if seleccion == "Inicio 🏠":
         pagina_inicio()
-    elif seleccion == "STOCK 📋":
-        STOCK()
+    elif seleccion == "nominacion 📋":
+        nominacion()
     elif seleccion == "Declaración Recurso Primario 📊":
         recurso_primario()
+    elif seleccion=="STOCK 💾":
+        STOCK()
 
 if __name__ == "__main__":
     main()
