@@ -5,9 +5,9 @@ import pandas as pd
 def stock():
     st.title("Calculo del STOCK disponible de Gas")
     #lectura archivo stock onedrive
-    def leer_excel(url, nombre_hoja, columnas):
+    def leer_excel(url, nombre_hoja):
         try:
-            df = pd.read_excel(url, sheet_name=nombre_hoja, usecols=columnas)
+            df = pd.read_excel(url, sheet_name=nombre_hoja)
             return df
         except Exception as e:
             st.error(f"Error al leer el archivo de Excel: {e}")
