@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from openpyxl import load_workbook
+
 
 def Calculo_Vectores_GMetropolitana():
     st.title("Calculo Vectores Generadora Metropolitana")
@@ -12,7 +12,7 @@ def Calculo_Vectores_GMetropolitana():
     if archivo is not None:
         try:
         # Leer el archivo Excel
-            df = pd.read_excel(archivo,engine='openpyxl')
+            df = pd.read_excel(archivo)
         
         # Mostrar los datos del archivo Excel
             st.write('**Datos del archivo Excel:**')
