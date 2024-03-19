@@ -1,10 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import seaborn as sns
 import matplotlib.pyplot as plt
-from datetime import datetime, timedelta
-import numpy as np
 
 def stock():
     st.title("Calculo del STOCK disponible de Gas")
