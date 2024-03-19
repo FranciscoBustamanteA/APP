@@ -1,4 +1,5 @@
 import streamlit as st 
+import pandas as pd
 from home import nominacion
 from Recurso_primario import recurso_primario
 from STOCK import stock
