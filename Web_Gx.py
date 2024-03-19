@@ -39,7 +39,7 @@ def main():
     if is_authenticated:
         seleccion = st.sidebar.radio(
             "Ir a",
-            ("Inicio 🏠", "Nominación 📋", "Declaración Recurso Primario 📊")
+            ("Inicio 🏠", "STOCK 📋", "Declaración Recurso Primario 📊")
         )
     else:
         seleccion = st.sidebar.radio(
@@ -49,8 +49,8 @@ def main():
 
     if seleccion == "Inicio 🏠":
         pagina_inicio()
-    elif seleccion == "Nominación 📋":
-        nominacion()
+    elif seleccion == "STOCK 📋":
+        STOCK()
     elif seleccion == "Declaración Recurso Primario 📊":
         recurso_primario()
 
