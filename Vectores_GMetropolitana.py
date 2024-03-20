@@ -10,6 +10,10 @@ def Calculo_Vectores_GMetropolitana():
     #segunda archivo ADP
     # Permitir que el usuario cargue un archivo Excel
     archivo_ADP = st.file_uploader('Cargar archivo Excel ADP', type= 'xlsx')
+
+    #tercer archivo descarga barco real
+    # Permitir que el usuario cargue un archivo Excel
+    archivo_descarga_barco = st.file_uploader('Cargar archivo Excel Descarga real Barcos', type= 'xlsx')
     
     # Verificar si se ha cargado un archivo
     if archivo_vector:
