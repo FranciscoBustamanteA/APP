@@ -41,7 +41,7 @@ def main():
     if is_authenticated:
         seleccion = st.sidebar.radio(
             "Ir a",
-            ("Inicio 🏠", "Nominación 📋",", "Logout")
+            ("Inicio 🏠", "Nominación 📋","Logout")
         )
     else:
         seleccion = st.sidebar.radio(
