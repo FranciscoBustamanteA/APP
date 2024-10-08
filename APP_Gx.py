@@ -1,5 +1,5 @@
 import streamlit as st 
-from home import nominacion
+from nominacion import nominacion
 
 
 # Definir credenciales
